@@ -25,10 +25,10 @@ var oiUsers = $('#oi_users');
 
 
 // stores the actual invitation objects.
-var oiInvitedUsers = new Array();
+var oiInvitedUsers = [];
 
 // stores a hash of invitedName and accountId for easy dupe checking.
-var oiInvitedUsersHash = new Array();
+var oiInvitedUsersHash = [];
 var oiMessageCount = 0;
 
 var oiInvitingCountMsg = '<?php echo $oiInvitingCountMsg ?>';
@@ -38,8 +38,7 @@ var oiInvitingCountMsgSingular = '<?php echo $oiInvitingCountMsgSingular ?>';
 // @todo pass on any get params.
 function oiUpdateMethodContent(method) {
 	$('#oi_content_loader').slideDown('fast');
-	$('#oi_done_button').slideUp('fast');
-	$('#oi_content').slideToggle();
+	$('#oi_content,#oi_done_button').slideUp('fast');
 
 	//@todo cancel all pending requests
 	
@@ -52,8 +51,7 @@ function oiUpdateMethodContent(method) {
 		}
 		
 		$('#oi_content_loader').slideUp('fast');
-		$('#oi_done_button').slideDown('fast');
-		$('#oi_content').slideToggle();
+		$('#oi_content,#oi_done_button').slideDown('fast');
 	});
 }
 
@@ -97,7 +95,7 @@ function oiAddInvitedUser(invitedName, invitedId, method, params) {
 function oiInvitedUserExists(invitedId, method) {
 	var hash = oiHashInvite(invitedId, method);
 	
-	if (jQuery.inArray(hash, oiInvitedUsersHash) < 0) {
+	if ($.inArray(hash, oiInvitedUsersHash) < 0) {
 		return false;
 	}
 	
@@ -110,7 +108,7 @@ function oiInvitedUserExists(invitedId, method) {
 function oiRemoveInvitedUser(invitedName, invitedId, method) {
 	var hash = oiHashInvite(invitedId, method);
 
-	var i = jQuery.inArray(hash, oiInvitedUsersHash);
+	var i = $.inArray(hash, oiInvitedUsersHash);
 	if (i >= 0) {
 		//remove from hash
 		oiInvitedUsersHash.splice(i, 1);
@@ -126,7 +124,7 @@ function oiRemoveInvitedUser(invitedName, invitedId, method) {
 
 // returns an array of invited people.
 function oiGetInvitedUsers(method) {
-	var r = new Array();
+	var r = [];
 
 	method = method || 'all';
 	
@@ -222,7 +220,6 @@ function oiSubmitForm() {
 	// jquery should be able to do it without the
 	// json method.
 	var invited = $.toJSON(invitedUsers);
-
 	$('#oi_invited_users').val(invited);
 	$('form[name=oi_form]').submit();
 }
@@ -246,13 +243,11 @@ function oiBindContentEnter(fn) {
 // register event handler for method select
 // force a change on select
 $(document).ready(function() {
-	var inviteWho = $('select[name=oi_invite_who]');
 	
-	inviteWho.change( function() {
-		 oiUpdateMethodContent(inviteWho.val());
-	});
+	$('select[name=oi_invite_who]').change( function() {
+		 oiUpdateMethodContent($(this).val());
+	}).change();
 
-	inviteWho.change();
 
 	// unset any browser-saved form elements.
 	$('#oi_invited_users').val('');
