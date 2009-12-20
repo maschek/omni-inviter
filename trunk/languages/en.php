@@ -112,9 +112,9 @@ $en = array(
 	'oi:invite:invitations_created' => '%s invitations have been created and will be sent soon!',
 	'oi:invite:invitations_created_singular' => '%s invitation has been created and will be sent soon!',
 
-	'oi:invite' => 'Invite Users',
-	'oi:invite:inviting' => 'I am inviting %s users.',
-	'oi:invite:inviting_singular' => 'I am inviting %s user.',
+	'oi:invite' => 'Invite Friends',
+	'oi:invite:inviting' => 'I am inviting %s friends.',
+	'oi:invite:inviting_singular' => 'I am inviting %s friend.',
 	'oi:invite:send_invitations' => 'Send Invitations!',
 	'oi:invite:send_success' => 'Sent invitation!',
 	'oi:invite:delete_success' => 'Invitation has been deleted.', 
@@ -123,9 +123,9 @@ $en = array(
 	'oi:name' => 'Name',
 	'oi:method' => 'Method',
 	'oi:log' => 'Log',
-	'oi:add' => 'Add User',
-	'oi:done' => 'Done adding users',
-	'oi:added_users' => 'Your users have been added but no invitations have been sent yet!  You can search for more users or push the Send Invitations button to send all invitations now.',
+	'oi:add' => 'Add to list',
+	'oi:done' => 'Done creating invitation list',
+	'oi:added_users' => 'Your friends have been added but no invitations have been sent yet!  You can search for more friends or push the Send Invitations button to send all invitations now.',
 	
 	'oi:have_invitation' => 'I have an invitation ID and code.',
 	'oi:invitation_id' => 'Invitation ID',
@@ -133,14 +133,14 @@ $en = array(
 	'oi:invitation_info_accepted' => 'Invitation ID and code confirmed!  Please continue registering!',
 
 	/* WIDGET */
-	'oi:widget:name' => 'My Invited Users',
-	'oi:widget:description' => 'Show off the users you\'ve invited!',
-	'oi:widget:i_invited' => 'I\'ve invited %s users!',
-	'oi:widget:i_invited_singular' => 'I\'ve invited %s user!',
+	'oi:widget:name' => 'My Invited Friends',
+	'oi:widget:description' => 'Show off the friends you\'ve invited!',
+	'oi:widget:i_invited' => 'I\'ve invited %s friends!',
+	'oi:widget:i_invited_singular' => 'I\'ve invited %s friend!',
 	'oi:widget:link_msg' => 'See if you can invited more!',
-	'oi:widget:my_invited_users' => 'My Invited Users',
-	'oi:widget:num_display' => 'Number of invited users to display',
-	'oi:widget:icon_size' => 'Icon size for invited users',
+	'oi:widget:my_invited_users' => 'My Invited Friends',
+	'oi:widget:num_display' => 'Number of invited friends to display',
+	'oi:widget:icon_size' => 'Icon size for invited friends',
 	'oi:widget:small' => 'Small',
 	'oi:widget:tiny' => 'Tiny',
 	'oi:widget:disabled' => 'Disabled',
@@ -180,7 +180,7 @@ $en = array(
 
 	'oi:admin:created_by' => 'Created by',
 	'oi:admin:created_by_value' => '%s on %s',
-	'oi:admin:invited_name' => 'Invited User\'s Name',
+	'oi:admin:invited_name' => 'Invited Friend\'s Name',
 
 	'oi:admin:log' => 'Log',
 
